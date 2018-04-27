@@ -1,28 +1,28 @@
-.main{
+.main {
     background-color:#d2dae2;
   }
-  .mainbox{
+  .mainbox {
     margin:0 auto;
     margin-top:40px;
     width:650px;
     background-color:white;
     box-shadow: 0px 0px 10px #888888;
   }
-  .nav{
+  .nav {
     background-color:black;
     color:white;
     padding:50px 10px 5px;
   }
-  .container{
+  .container {
     padding:40px;
   }
-  .left{
+  .left {
     
   }
-  .right{
-    float:right;
+  .right {
+    
   }
-  .pinfo{
+  .pinfo {
     margin-top:40px;
     font-family:Tahoma;
   }
