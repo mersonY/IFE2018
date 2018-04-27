@@ -1,5 +1,6 @@
+/* 布局部分 */
 body {
-    background-color: #d2dae2;
+    background-image: url(main-bg.jpg);
 }
 .mainbox {
     position: relative;
@@ -18,7 +19,6 @@ body {
     color:white;    
 }
 .article {
-    
 }
 .left {
     position: relative;
@@ -40,7 +40,37 @@ body {
     margin-left: 450px;
     background-image: url(index.png);
     background-repeat: no-repeat;
+    background-position: 50%  30px;
 }
+
+/* 文本装饰部分 */
 .yellow{
-    color:#fbc531;
+    color:#f4d03f;
   }
+.exp ul li {
+    margin-bottom: 6px;
+   
+}
+.info ul {
+    list-style: none;
+}
+.info ul li {
+    margin-bottom: 20px;
+   font-family: 'Open Sans';
+}
+.info label {
+    display: inline-block;    
+    width: 58px;
+    margin-right: 10px;
+    padding: 3px 10px 3px; 
+    background: #f4d03f;
+    font-weight: bold;
+}
+.info span {
+    display: inline-block;
+    width: 150px;
+    padding: 4px 10px 4px;
+    background-color: black;
+    color: white;
+    
+}
