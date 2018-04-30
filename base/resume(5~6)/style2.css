@@ -1,4 +1,51 @@
+/* 经验总结：等高布局需要给整个盒子与侧边栏一个高度，如果有内边距还要另外计算 */
 * {
     margin: 0;
     padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+nav {
+    width: 960px;
+    margin: 0 auto;
+}
+.main-box {
+    width:960px;
+    height: 720px;
+    margin: 20px  auto;
+    border: 2px solid #ecf0f1;
+}
+header {
+    width: 200px;
+    height: 700px;
+    background-color: rgb(101, 165, 250);
+    padding: 20px 0 0 0;
+    float: left;
+    text-align: center;
+    color: white;
+}
+section {
+    margin-left: 200px;
+    padding: 30px;
+}
+.info {
+    margin-bottom: 20px;
+}
+.info-box {
+    margin-top:8px; 
+}
+.info-box ul li {
+    display: inline-block;
+    margin-right: 15px;
+
+}
+.info-box ul li strong {
+    margin-right: 10px;
+}
+.info-detail {
+    margin-top: 8px;
+}
+.info-detail p {
+    margin-top: 5px;
 }

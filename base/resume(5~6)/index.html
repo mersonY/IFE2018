@@ -3,77 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style1.css" id="link">
 </head>
+
 <body>
-    <h1>简历</h1>
-    <div class="section">
-        <h2>基本信息</h2>
-        <div class="info">
-            <ul>
-                <li><strong>姓名</strong><span>张三</span></li>
-                <li><strong>性别</strong><span>男</span></li>
-                <li><strong>应聘职位</strong><span>web前端工程师</span></li>
-            </ul>           
-        </div>
-    </div>
-    <div class="section">
-        <h2>联系方式</h2>
-        <div class="info">
-            <ul>
-                <li><strong>手机</strong><span>12345678</span></li>
-                <li><strong>Email</strong><a href="#">badidu@mail.com</a></li>
-                <li><strong>个人主页</strong><a href="#">Github</a></li>
-            </ul>            
-        </div>
-    </div>
-    <div class="section">
-        <h2>能力描述</h2>
-        <div class="info">
-            <div class="info-detail">
-                <h4>技术能力</h4>
-                <p>熟练掌握HTML,CSS,JavaScript</p>
-            </div>
-            <div class="info-detail">
-                <h4>综合能力</h4>
-                <p>良好的沟通，主动积极，努力勤奋</p>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <h2>教育经历</h2>
-        <div class="info">
-            <div class="info-detail">
-                    <h4>本科</h4>
-                    <p>百度前端技术学院小微学院</p>
+    <nav class="nav">
+        <span>切换样式 </span>
+        <button class="style-btn" data-file="style1">style1.css</button>
+        <button class="style-btn" data-file="style2">style2.css</button>
+        <button class="style-btn" data-file="style3">style3.css</button>
+    </nav>
+    <div class="main-box">
+        <header>
+                <h1>简历</h1>
+        </header>
+        <section>
+            <div class="info">
+                    <h2>基本信息</h2>
+                    <div class="info-box">
+                        <ul>
+                            <li><strong>姓名</strong><span>张三</span></li>
+                            <li><strong>性别</strong><span>男</span></li>
+                            <li><strong>应聘职位</strong><span>web前端工程师</span></li>
+                        </ul>           
+                    </div>
                 </div>
-                <div class="info-detail">
-                    <h4>研究生</h4>
-                    <p>百度前端技术学院小名学院</p>
+                <div class="info">
+                    <h2>联系方式</h2>
+                    <div class="info-box">
+                        <ul>
+                            <li><strong>手机</strong><span>12345678</span></li>
+                            <li><strong>Email</strong><a href="#">badidu@mail.com</a></li>
+                            <li><strong>个人主页</strong><a href="#">Github</a></li>
+                        </ul>            
+                    </div>
                 </div>
-        </div>
-            
-        </div>
+                <div class="info">
+                    <h2>能力描述</h2>
+                    <div class="info-box">
+                        <div class="info-detail">
+                            <h4>技术能力</h4>
+                            <p>熟练掌握HTML,CSS,JavaScript</p>
+                        </div>
+                        <div class="info-detail">
+                            <h4>综合能力</h4>
+                            <p>良好的沟通，主动积极，努力勤奋</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <h2>教育经历</h2>
+                    <div class="info-box">
+                        <div class="info-detail">
+                                <h4>本科</h4>
+                                <p>百度前端技术学院小微学院</p>
+                            </div>
+                            <div class="info-detail">
+                                <h4>研究生</h4>
+                                <p>百度前端技术学院小名学院</p>
+                            </div>
+                    </div>                        
+                    </div>
+                <div class="info">
+                    <h2>项目经历</h2>
+                    <div class="info-box">
+                        <div class="info-detail">
+                                <h4>小度小度</h4>
+                                <p>作为前端工程师参与了ABC组件开发</p>
+                            </div>
+                            <div class="info-detail">
+                                <h4>SAN Doc</h4>
+                                <p>作为文档老弟参与了SAN Doc编写</p>
+                            </div>
+                    </div>            
+                </div>        
+        </section>
     </div>
-    <div class="section">
-        <h2>项目经历</h2>
-        <div class="info">
-            <div class="info-detail">
-                    <h4>小度小度</h4>
-                    <p>作为前端工程师参与了ABC组件开发</p>
-                </div>
-                <div class="info-detail">
-                    <h4>SAN Doc</h4>
-                    <p>作为文档老弟参与了SAN Doc编写</p>
-                </div>
-        </div>
-            
-        </div>
-    </div>
+    <script>
+            var cssLink = document.getElementById("link");
+            var btn = document.querySelectorAll('.style-btn');
     
+            var length = btn.length;
+            for (var i = 0; i < length; i += 1) {
+                btn[i].onclick = function() {
+                    var fileName = this.dataset.file;
+                    cssLink.href = './' + fileName + '.css';
+                }
+            }
+        </script>
     
-    
-    
-    
+
 </body>
 </html>
