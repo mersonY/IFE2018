@@ -12,12 +12,12 @@ ul {
     visibility: hidden;
     clear: both;
 }
+.center-box {
+    margin: 0 auto;   
+}
 /* header部分 */
 header {
     background-color: black;
-}
-.center-box {
-    margin: 0 auto;   
 }
 header .center-box {
     width: 960px;
@@ -90,7 +90,7 @@ nav .center-box ul {
     left: 0;
 
 }
-nav .center-box ul li {
+nav  ul li {
     float: left;
     width: 100px;
     height:50px ;
@@ -100,12 +100,13 @@ nav .center-box ul li {
     border-radius: 15px 15px 0 0;
     text-align: center;
     line-height: 50px;
+    margin-bottom: -1px;
     
 }
 nav .center-box ul .active {
     background-color: white;
     border: 1px solid #ced6e0;
-    border-bottom: 0;
+    border-bottom-color:transparent;
 }
 nav ul li a {
     text-decoration: none;
@@ -165,10 +166,10 @@ main section:last-child {
 
 /*footer*/
 footer {
-    height: 50px;
+    height: 70px;
     margin-top: 40px;
     background-color: black;
     text-align: center;
     color: white;
-    line-height: 50px;
+    line-height: 70px;
 }
