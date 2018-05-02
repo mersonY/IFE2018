@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化 -->
+    <style>
+    /* 第一种利用float定位，由于给了父元素高度，使得子元素浮动后父元素不会坍塌，所以不用清除浮动 */        
+    section.float {
+        max-width: 960px;
+        height: 400px;
+        background-color: black;
+        margin: 0 auto;
+
+    }
+    section.float .left {
+        width: 200px;
+        height: 100%;
+        float: left;
+        background-color: pink;
+
+    }
+    section.float .right {
+        width: 200px;
+        height: 100%;
+        float: right;
+        background-color: skyblue;
+
+    }    
+    section.float .center {
+        height: 100%;
+        margin: 0 200px;  /*或paading*/
+        background-color: gray;
+
+    }
+
+    /* 第二种利用position定位 */
+    section.position {
+        max-width: 960px;
+        height: 400px;
+        margin: 20px auto;
+        background-color: saddlebrown;
+        position: relative;       
+
+    }
+    section.position .left {
+         width: 200px;
+         height: 100%;
+         background-color: rosybrown;
+         position: absolute;
+         top: 0;
+         left: 0;
+
+    }
+    section.position .right {
+         width: 200px;
+         height: 100%;
+         background-color: yellow;
+         position: absolute;
+         top: 0;
+         right: 0;
+
+    }
+    section.position .center {
+        height: 100%;
+        margin: 0 200px;
+        background-color: burlywood;
+    }     
+
+    /* 第三种利用圣杯定位 */
+    section.grail {
+        box-sizing: border-box;   /*如果要设置父盒子的宽度，就要转化为这个怪异盒模型，否则就不设置父盒子的宽度了*/
+        width: 960px;
+        height: 400px;
+        background-color: blanchedalmond;
+        margin: 20px auto;
+        padding: 0 200px;
+        overflow: hidden;
+
+
+    }
+    section.grail div {
+        float: left;
+    }
+    section.grail .center {
+        width: 100%;
+        height: 400px;
+        background-color: blueviolet;
+
+    }
+    section.grail .left {
+        width: 200px;
+        height: 400px;
+        margin-left: -100%;
+        background-color: brown;
+        position: relative;
+        left: -200px;
+    }
+    section.grail .right {
+        width: 200px;
+        height: 400px;
+        margin-left: -200px;
+        background-color: cadetblue;
+        position: relative;
+        right: -200px;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <section class="float">        
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center"></div>  <!-- 注意这个结构，如果是right放最后就是另起一行了，不信试试看  -->
+    </section>
+    <section class="position">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </section>
+    <section class="grail">
+        <div class="center"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </section>
+</body>
+</html>

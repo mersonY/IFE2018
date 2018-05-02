@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 实现一个三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化 -->
+    <title>Document</title>
+    <style>
+        .float {
+            width:960px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: blanchedalmond;
+        }
+        .float aside,
+        .first,
+        .second {
+            float: left;
+        }
+        .float aside {
+            width: 400px;
+            height: 100%;
+            background-color: beige;
+            overflow: hidden;
+        }
+
+        .first {
+            width: 200px;
+            height: 100%;
+            background-color: deeppink;
+        }
+        .second {
+            width: 200px;
+            height: 100%;
+            background-color: darkslategrey;
+        } 
+        .float main {
+            height: 100%;
+            margin-left: 400px;
+            background-color: rgb(80, 51, 13); 
+        }       
+
+    </style>
+</head>
+<body>
+    <!-- 1.用float来定位:float:left+margin-left -->
+
+<section class="float">
+    <aside >
+        <div class="first"></div>
+        <div class="second"></div>
+    </aside>
+    <main>111111111111111111111111111111</main>
+</section>
+</body>
+</html>

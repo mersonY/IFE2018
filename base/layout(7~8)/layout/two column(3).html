@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化 -->
+    <style>
+     section.float {
+         width: 960px;
+         height: 400px;
+         margin: 0 auto;
+         background-color: black;
+     }   
+     .float aside {
+         width: 200px;
+         height: 400px;
+         background-color: black;
+         float: right;
+     }
+     .float main {
+         height: 400px;
+         margin-right: 200px;
+         background-color: skyblue;
+        
+     }
+     .clearfix::after {
+         display: block;
+         content: ".";
+         height: 0;
+         visibility: hidden;
+         clear: both;
+     }
+     section.position {
+         width: 960px;
+         height: 400px;
+         margin: 20px auto;
+         background-color: purple;
+         position: relative;
+     }
+     .position aside {
+         width: 200px;
+         height: 400px;
+         position: absolute;
+         top: 0;
+         right: 0;
+         background-color: blue;
+
+     }
+     .position main {
+         height: 400px;
+         background-color: red;
+         margin-right: 200px;
+     }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <section class="float ">
+        <aside></aside>
+        <main></main>
+    </section>
+    <section class="position clearfix">
+        <aside></aside>
+        <main></main>
+    </section>    
+</body>
+</html>
