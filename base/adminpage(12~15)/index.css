@@ -1,0 +1,690 @@
+/* 
+------------
+初始化布局 
+------------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*使用css3盒子模型  */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+.clearfix::after {
+    display: block;
+    content: "."; 
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+/* 
+---------------------
+基本结构 
+---------------------
+*/
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+.container {
+    min-width: 1366px;
+    min-height: 600px;
+    height: 100%;
+    position: relative;
+}
+
+/* 
+-----------------------
+侧边栏
+-----------------------
+ */
+.sidebar-1 {
+    position: fixed;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background-color: #1D2531;
+}
+.sidebar-2 {
+    position: fixed;
+    left: 100px;
+    width: 250px;
+    height: 100%;
+    background-color: #222c3c;
+}
+
+/* sidebar-1 细节部分 */
+.sidebar-1 .item {
+    margin-top: 20px;
+}
+.sidebar-1 .icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto; /*让图标居中*/
+    border-radius: 60px;
+    text-decoration: none;
+}
+.sidebar-1 .icon-1 {
+    background-image: url(images/item1.png) ;
+}
+.sidebar-1 .icon-2 {
+    background-image: url(images/item2.png) ;
+}
+.sidebar-1 .icon-3 {
+    background-image: url(images/item3.png) ;
+}
+.sidebar-1 .icon-4 {
+    background-image: url(images/item4.png) ;
+}
+.sidebar-1 .setting {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    text-align: center;
+}
+.sidebar-1 .setting-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.setting-icon-1 {
+    background: url(images/Grid.png) no-repeat;
+}
+.setting-icon-2 {
+    margin-left: 10px;
+    background: url(images/Settings.png) no-repeat;
+}
+
+/* sidebar-2细节部分 */
+.sidebar-2 .list {
+    margin-top: 20px;
+    padding: 0 30px;
+}
+.sidebar-2 .item-title {
+    margin-bottom: 20px;
+    color: #5b6779;
+    font-size: 12px;
+    font-weight: 400;  
+}
+.sidebar-2 .title-icon {
+    display: block;
+    float: right;
+    width:15px;
+    height: 15px;
+    background-image: url(images/Settings.png);
+}
+.sidebar-2 .item {
+    height: 35px;
+    position: relative;
+}
+.sidebar-2 .item:last-child {
+    border-bottom: 1px solid #213547;
+}
+.sidebar-2 .list-3 .item:last-child {
+    border: none;
+}
+.sidebar-2 .item a {
+    font-size: 14px;
+    color: #b7c0cd;
+    text-decoration: none;
+}
+.sidebar-2 .item a:hover {
+    color: #fff;
+    transition: .5s;
+}
+
+/* notification+alert小图标 */
+.sidebar-2 .notification,
+.sidebar-2 .alert {
+    display: block;
+    height: 24px;
+    float: right;
+    margin-top: 2px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 24px;
+}
+.sidebar-2 .notification {
+    width: 32px;
+    background-color: #269cf3;
+}
+.sidebar-2 .alert {
+    width: 24px;
+    background-color: #de3c1e;
+}
+
+/* list2四个小图标 */
+.sidebar-2 .list-2 .item {
+    padding-left: 28px;
+}
+.sidebar-2 .list-2 .icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: -13px;
+}
+.sidebar-2 .icon-1 {
+    background: url(images/item5.png) no-repeat;
+}
+.sidebar-2 .icon-2 {
+    background: url(images/item6.png) no-repeat;
+}
+.sidebar-2 .icon-3 {
+    background: url(images/item7.png) no-repeat;
+}
+.sidebar-2 .icon-4 {
+    background: url(images/item8.png) no-repeat;
+}
+/* 底部进度条 */
+.sidebar-2 .progress {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 210px;
+    margin-left: -105px;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 13px;
+}
+.sidebar-2 .progress-title {
+    margin-right: 15px;
+}
+.sidebar-2 .progress-box {
+    height: 5px;
+    margin-top: 15px;
+    border-radius: 3px;
+    background-color: #2d3848;
+}
+.sidebar-2 .progress-detail {
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #8c72e5;
+}
+
+/* 
+-------------------
+主体部分 
+------------------
+*/
+/* 主体部分结构 */
+main {
+    position: relative;  /*给.friend-list一个定位*/
+    margin-left: 350px;
+    /* background-color: burlywood; */
+    
+}
+header {
+    height: 80px;
+    border-bottom: 1px solid#e6e9ec;
+    background-color: #fff;
+}
+.center-box {
+    width: 96%;
+    margin: 0 auto;
+}
+/* main .content-box {
+}  */
+main .friend-list {
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 1300px;
+    /* background-color: antiquewhite; */
+}
+main .message-list {
+    margin-left: 400px;
+    height: 1300px;
+}
+
+/* 主体部分细节 header */
+header .main-title {
+    float: left;
+    width: 100px;
+    height: 80px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #354052;  
+    line-height: 80px;
+}
+header .userinfo {
+    float: right;
+    width: 210px;
+    height: 80px;
+}
+header .user-image, 
+header .user-detail,
+header .icon-arrow {
+    display: block;
+    float: left;
+    
+}
+header .user-image {
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+    border-radius: 25px;
+    background: url(images/Photo.png) no-repeat;
+}
+header .user-detail {
+    margin: 20px 30px 20px 15px;
+}
+header .user-detail h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2399f1;
+}
+header .user-detail span {
+    font-size: 14px;
+    color: #b5b5b5;
+}
+header .icon-arrow {
+    margin-top: 35px;
+    width: 9px;
+    height: 9px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent #c4cbdb #c4cbdb transparent;
+    transform: rotate(45deg);
+}
+
+/* 主体部分细节 .content-box */
+
+/* content-box  > friend-list */
+.friend-list > .center-box {    /*这么声明是因为center-box被复用多次*/
+    width: 100%;
+    height: 70px;
+   overflow: hidden;        /* 消除上外边距的影响*/
+}
+.friend-list .search-box {
+        position: relative;   /*给小图标一个定位*/
+        width: 340px;
+        height: 36px;
+        margin: 17px auto;
+        border: 1px solid #e5e8ee;
+        border-radius: 4px;
+}
+ .search-box input[type="text"] {
+     width: 300px;
+     height: 34px;
+     padding: 10px 0 10px 10px;
+ }
+ .search-box input[type="submit"] {
+      position: absolute;
+      top: 0;
+      right: 0;
+     width: 40px;
+     height: 34px;
+     background: url(images/search.png) no-repeat center;
+     cursor: pointer;
+ }
+
+.friend-list .list a {
+    display: block;
+    width: 400px;
+    height: 130px;
+    border-top: 1px solid #e5e8ee;
+}
+.friend-list .list  .center-box {
+    width: 350px;
+    margin: 15px auto 0;
+}
+.friend-list .friend-detail {
+    position: relative;  /*给子元素定位*/
+    padding-left: 65px;
+    /* padding-top: 2px; */
+    overflow: hidden;
+}
+.friend-list .friend-detail  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 46px;
+    height: 46px;
+}
+.friend-detail .name {
+    position: relative;    /*给name小圆点一个定位*/
+    height: 23px;
+    font-size: 16px;
+    color: #585d68;
+    /* margin-top: 3px; */
+}
+.friend-detail .source {
+    height: 23px;
+    font-size: 14px;
+    color: #b5b5b5;
+}
+.friend-detail .date {
+    float: right;
+    font-size: 14px;
+    font-weight: 700;
+    color: #7f8fa4;
+    line-height: 1.6;
+}
+.friend-list .latest {
+    margin-top: 10px;
+    font: 14px/1.5 "Myriad Pro Regular";
+    color: #858889;
+}
+/* a:hover时列表特殊样式 */
+.friend-list .list a:hover {
+    border-left: 4px solid #2399f1;
+    transition: 0.2s;
+}
+.friend-list .list a:hover .name {
+    color: #2399f1;
+}
+.friend-list .list .active {
+    border-left: 4px solid #2399f1;
+}
+.friend-list .list .active .name {
+    color: #2399f1;
+    padding-left: 15px;
+}
+/* 新加的一个小圆点，绝技 */
+.friend-list .list .active .name::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    margin-top: -4px;
+    border-radius: 9px;
+    background-color: #2399f1;
+}
+/* 提示信息的条数 */
+.friend-list .notification {
+    display: block;
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-top: 2px;
+    background-color: #1e95ee;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 24px;
+}
+
+
+/* content-box  > message-list */
+.message-list {
+    border-left: 1px solid #e5e8ee;
+}
+.message-list .message-title {
+    height: 70px;  
+}
+.message-list .message-box {
+    /* height: 310px; */
+    border-top: 1px solid #e5e8ee;
+}
+.message-title .center-box {
+    width: 94%;
+    position: relative;
+}
+.message-title h3 {
+    position: relative;
+    width: 120px;
+    font-size: 18px;
+    color: #585d68;
+    line-height: 70px;
+}
+.message-title h3::after {      /*利用伪元素来添加小圆点*/
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    width: 9px;
+    height: 9px;
+    margin-top: -3px;
+    border-radius: 4.5px;
+    background-color: #1bb934;
+}
+.message-title .tool {
+    box-sizing: content-box;
+    position: absolute;
+    top: 50%;
+    right: 180px;
+    width: 108px;
+    height: 34px;
+    margin-top: -17px;
+    border: 1px solid #e5e8ee;
+    border-radius: 6px;
+}
+.message-title .tool::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 1px;
+    height: 34px;
+    margin-left: 24px;
+    background-color: #e5e8ee;
+}
+.tool li {
+    float: left;
+}
+.tool a {
+    display: block;
+    width: 36px;
+    height: 34px;
+    border-right: 1px solid #e5e8ee;
+}
+.tool .icon-3 {
+    border-right: 0;
+}
+.tool .icon-1 {
+    background: url(images/User.png) no-repeat center;
+}
+.tool .icon-2 {
+    background: url(images/Upload.png) no-repeat center;
+}
+.tool .icon-3 {
+    background: url(images/Trash.png) no-repeat center;
+}
+.message-title .page {
+    box-sizing: content-box;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 140px;
+    height: 34px;
+    margin-top: -17px;
+}
+.page .page-number {
+    display: block;
+    height: 34px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #585d68;
+    line-height: 34px;
+}
+.page .list {
+    box-sizing: content-box;
+    float: right;
+    height: 33px;
+    border: 1px solid #e5e8ee;
+    border-radius: 6px;
+}
+.page .list li {
+    float: left;
+}
+.page .list a {
+    display: block;
+    width: 34px;
+    height: 34px;
+    border-right: 1px solid #e5e8ee;
+}
+.page .list .arrow-left {
+    background: url(images/Arrowleft.png) no-repeat center;
+}
+.page .list .arrow-right {
+    border-right: 0;
+    background: url(images/Arrowright.png) no-repeat center;
+}
+.message-box {
+    position: relative; /*给日期一个定位*/
+}
+.message-box .center-box {
+    width: 92%;
+    padding-bottom: 40px;
+}
+.message-box .item {
+    position: relative;
+    margin-top: 25px;
+    padding-left: 65px;
+}
+.message-box .user-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+}
+.message-box .girl {
+    background: url(images/face1.png) no-repeat center;
+} 
+.message-box .boy {
+    background: url(images/Face.png) no-repeat center;
+} 
+.message-box .item h4 {
+    font-size: 16px;
+    color: #585d68;
+}
+.message-box  h4 span {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #7f8fa4;
+}
+.message-box .item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #585d68;
+}
+ .box-1::after {
+    content: "Tuesday";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -7.5px;
+    margin-left: -50px;
+    padding: 0 20px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #7f8fa4;
+    text-align: center;
+    z-index: 10;   /*这是为什么*/
+}
+ .box-2::after {
+    content: "New Messages";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -7.5px;
+    margin-left: -50px;
+    padding: 0 20px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #2399f1;
+    text-align: center;
+    z-index: 10;   /*这是为什么*/
+}
+.message-list .box-3 {   /*css优先级 对比.message-list .message-box*/
+    border-top: 1px solid #2399f1;
+}
+.box-2 .pic {
+    margin-top: 15px;
+}
+.box-2 .pic a {
+    display: block;
+    float: left;
+    width: 156px;
+    height: 100px;
+    border-radius: 4px;
+    position: relative;
+}
+.box-2 .pic a:first-child {
+    margin-right: 15px;
+}
+/* 遮罩层 */
+.box-2 .pic .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 156px;
+    height: 100px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.5s;
+}
+.box-2 .pic .layer:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+.box-2 .look {
+    width: 45px;
+    height: 45px;
+    margin: 27.5px auto;
+    border-radius: 45px;
+    background-color: rgba(255, 255, 255, .2);
+    text-align: center;
+    line-height: 45px;
+}
+.box-3 .center-box {
+    padding-bottom: 10px;
+}
+.box-3 .send {
+    position: relative;
+    height: 54px;
+    padding-left: 62px;
+    border: 1px solid #e5e8ee;
+    border-radius: 2px;
+   
+}
+.box-3 .send button {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:52px;
+    height: 52px;
+    border-right: 1px solid #e5e8ee;
+    background-color: #fafafc;
+    text-align: center;
+    line-height: 52px;
+}
+.box-3 .send input[type="text"] {
+    width: 100%;
+    height: 52px;
+}
+
