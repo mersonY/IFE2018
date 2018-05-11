@@ -10,12 +10,6 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
-html,
-body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;  /*高度自适应*/
-}
 ul {
     list-style-type: none;
 }
@@ -42,24 +36,23 @@ button {
 基本结构 
 ---------------------
 */
-html {
-    height: 100%;
-}
+html,
 body {
+    width: 100%;
     height: 100%;
+    overflow: hidden;  /*高度自适应*/
 }
 .container {
     min-width: 1366px;
-    min-height: 600px;
+    min-height: 800px;
     height: 100%;
     position: relative;
 }
-
-/* 
------------------------
-侧边栏
------------------------
- */
+.center-box {
+    width: 96%;
+    margin: 0 auto;
+}
+/* 侧边栏结构 */
 .sidebar-1 {
     position: fixed;
     left: 0;
@@ -74,7 +67,38 @@ body {
     height: 100%;
     background-color: #222c3c;
 }
+/* 主体部分结构 */
+main {
+    position: relative;  /*给.friend-list一个定位*/
+    height: 100%;
+    margin-left: 350px;   
+}
+header {
+    height: 80px;
+    border-bottom: 1px solid#e6e9ec;
+    background-color: #fff;
+}
+main .content-box {
+    height: calc(100% - 80px);
+} 
+main .friend-list {
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    /* background-color: antiquewhite; */
+}
+main .message-list {
+    margin-left: 400px;
+    height: 100%;
+}
 
+
+/* 
+-----------------------
+侧边栏
+-----------------------
+ */
 /* sidebar-1 细节部分 */
 .sidebar-1 .item {
     margin-top: 20px;
@@ -238,38 +262,6 @@ body {
 主体部分 
 ------------------
 */
-/* 主体部分结构 */
-main {
-    position: relative;  /*给.friend-list一个定位*/
-    height: 100%;
-    margin-left: 350px;
-    /* background-color: burlywood; */
-    
-}
-header {
-    height: 80px;
-    border-bottom: 1px solid#e6e9ec;
-    background-color: #fff;
-}
-.center-box {
-    width: 96%;
-    margin: 0 auto;
-}
-main .content-box {
-    height: 100%;
-} 
-main .friend-list {
-    position: absolute;
-    left: 0;
-    width: 400px;
-    height: 100%;
-    /* background-color: antiquewhite; */
-}
-main .message-list {
-    margin-left: 400px;
-    height: 100%;
-}
-
 /* 主体部分细节 header */
 header .main-title {
     float: left;
@@ -327,7 +319,8 @@ header .icon-arrow {
 .friend-list > .center-box {    /*这么声明是因为center-box被复用多次*/
     width: 100%;
     height: 70px;
-   overflow: hidden;        /* 消除上外边距的影响*/
+    border-bottom: 1px solid #e5e8ee;
+    overflow: hidden;        /* 消除上外边距的影响*/
 }
 .friend-list .search-box {
         position: relative;   /*给小图标一个定位*/
@@ -361,6 +354,10 @@ header .icon-arrow {
     width: 400px;
     height: 130px;
     border-top: 1px solid #e5e8ee;
+}
+.friend-list .list li:first-child a {
+    border-top: none;
+    overflow: hidden;    /*消除li与ul上边距合并的影响*/
 }
 .friend-list .list  .center-box {
     width: 350px;
@@ -458,6 +455,12 @@ header .icon-arrow {
 .message-list .message-box {
     /* height: 310px; */
     border-top: 1px solid #e5e8ee;
+}
+.message-list .message-box:first-child {
+    border-top: none;
+}
+.message-title {
+    border-bottom: 1px solid #e5e8ee;
 }
 .message-title .center-box {
     width: 94%;
@@ -567,7 +570,7 @@ header .icon-arrow {
     background: url(images/Arrowright.png) no-repeat center;
 }
 .message {
-    height: calc(100% - 150px);
+    height: calc(100% - 70px);
     overflow: auto;
 }
 .message-box {
