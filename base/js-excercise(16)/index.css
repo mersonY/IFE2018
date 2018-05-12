@@ -1,0 +1,212 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.clearfix::after {
+    display: block;
+    content: "."; 
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+/* 结构部分 */
+body {
+   background-image: url(images/main-bg.jpg);
+}
+.container {
+    width: 860px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+aside {
+    float: left;
+    width: 250px;
+}
+main {
+    width: 560px;
+    height: 630px;
+    margin-left: 300px;
+}
+aside .picture {
+    width: 250px;
+    height: 300px;
+    background-color: black;
+}
+aside #tab {
+    width: 250px;
+}
+main header {
+    width: 560px;
+    height: 130px;
+}
+main #panel {
+    position: relative; /*给article定位*/
+    width: 560px;
+    height: 475px;
+    background-color: #fff;
+}
+article#profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 475px;
+    background-color: #fff;
+}
+article#hobby {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 475px;
+    background-color: #fff;
+}
+.active-panel {
+    z-index: 1;
+}
+/* 侧边栏部分:aside */
+aside .picture {
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+aside .picture h1 {
+    margin-top: 20px;
+    font-size: 36px; 
+}
+.picture h1 span {
+    color: #f4d03f;
+}
+aside .picture p {
+    margin-top: 5px;
+}
+aside .picture .logo {
+    width: 124px;
+    height: 124px;
+    margin: 20px auto 0;
+    border: 10px solid #f4d03f;
+    border-radius: 100px;
+    background: url(images/profile-thumb.png) no-repeat center;
+}
+aside #tab {
+    height: 280px;
+    margin-top: 10px;
+    padding-top: 10px;
+    list-style-type: none;
+    background-color: #f4d03f;
+}
+aside #tab li {
+    margin-top: 3px;
+}
+aside #tab a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #585d68;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    transition: 0.5s;
+}
+aside #tab a.active,
+aside #tab a:hover {
+    background-color: #000;
+    transition: 0.5s;
+
+}
+/* 主体部分:main */
+main header {
+    position: relative; /*给h1个定位*/
+    background-color: #000;
+    color: #fff;
+}
+main header h1 {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    padding: 0 30px;
+}
+main header span {
+    color: #f4d03f;
+}
+#profile .info-box {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.info-box .title {
+    margin-top: 20px;
+    font-size: 24px;
+}
+.info-box .subtitle {
+    margin-top: 10px;
+    color: #585d68;
+}
+.info-box .exp {
+    margin-top: 20px;
+}
+.info-box .personal-info {
+    margin-top: 20px;
+}
+.info-box .exp .list,
+.info-box .personal-info .list {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.exp .list li {
+    margin-top: 12px;
+}
+.personal-info .list li {
+    margin-top: 20px;
+}
+.info-box .personal-info .list {
+    list-style-type: none;
+}
+.personal-info label,
+.personal-info span {
+    display: inline-block;
+}
+.personal-info label {
+    width: 58px;
+    margin-right: 10px;
+    padding: 3px 10px 3px; 
+    background: #f4d03f;
+    font-weight: bold;
+}
+.personal-info span {
+    width: 150px;
+    padding: 4px 10px 4px;
+    background-color: black;
+    color: white; 
+}
+.person-img {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 400px;
+    background: url(images/index.png) no-repeat center -70px ;
+}
+
+#hobby ul {
+    list-style-type: none;
+}
+#hobby .hobby-list {
+    width: 450px;
+    margin: 0 auto;
+    text-align: center;
+}
+.hobby-list h3 {
+    margin-top: 50px;
+    font-size: 32px;
+}
+.hobby-list li {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
