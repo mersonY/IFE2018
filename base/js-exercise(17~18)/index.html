@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container clearfix">
+        <aside>
+            <div class="picture">
+                <h1><span>Mer</span>son</h1>
+                <p>Web developer</p>
+                <div class="logo"></div>
+            </div>
+            <ul id="tab">
+                <li><a href="#" class="active">Porfile</a></li>
+                <li><a href="#">hobby</a></li>
+            </ul>
+        </aside>
+        <main>
+            <header><h1><span>Welcome To</span> My Porfile</h1></header>
+            <section id="panel">
+                <article class="active-panel" id="profile">
+                    <div class="info-box">
+                        <h2 class="title">Hello,I am merson！</h2>
+                        <p class="subtitle">A web designer who graduated from NEU</p>
+                        <div class="exp">
+                            <h3>Experience</h3>
+                            <ul class="list">
+                                <li>Studying css&html in 2014</li>
+                                <li>Learning js&jquery in 2015</li>
+                                <li>Developing a front end frame in 2016</li>
+                            </ul>
+                        </div>
+                        <div class="personal-info">
+                            <h3>Personal Info</h3>
+                            <ul class="list">
+                                <li><label>Name</label><span>mreson Y</span></li>
+                                <li><label>Weibo</label><span>180cm80kg18cm</span></li>
+                                <li><label>Github</label><span>mreson Y</span></li>
+                            </ul>            
+                        </div>
+                    </div>
+                    <div class="person-img"></div>
+                </article>
+                <article id="hobby">
+                    <div class="hobby-list">
+                        <h3>My Hobby</h3>
+                        <ul class="list">
+                            <li>Basketball</li>
+                            <li>Football</li>
+                            <li>badminton</li>
+                        </ul>
+                        </div>                    
+                </article>
+            </section>
+        </main>
+    </div>
+</body>
+<script>
+    //TAB标签部分
+    var tabs = document.querySelectorAll("#tab li a");
+    var panels = document.querySelectorAll("#panel article");
+    for(i=0;i<tabs.length;++i)
+    {
+        var tab = tabs[i];
+        settabhandeler(tab,i);
+    }
+    function settabhandeler(tab,tabposition){
+        tab.onclick = function (){
+            for(i=0;i<tabs.length;i++)
+            {
+                if(tabs[i].getAttribute("class"))
+                {
+                    tabs[i].removeAttribute("class");
+                }
+            }
+
+            tab.setAttribute("class","active");
+
+            for(i=0;i<panels.length;i++)
+            {
+                if(panels[i].getAttribute("class"))
+                {
+                    panels[i].removeAttribute("class");
+                }
+            }
+            panels[tabposition].setAttribute("class","active-panel");
+
+        }
+    }
+
+    //弹出框部分
+    function time(){
+        var x = "";
+        var hour = new Date().getHours();
+        if(hour<10){
+            x = "good morning";
+        }
+        else if(hour<20) {
+            x = "good day";
+        }
+        else{
+            x = "good night";
+        }
+        return x;
+    }
+
+
+    var body = document.querySelector("body");
+    
+    function displayMessage(){
+        var messageBox = document.createElement("div");
+        messageBox.setAttribute("class", "message-box");
+        body.appendChild(messageBox);
+
+        var msg = document.createElement('p');
+        msg.textContent = time();
+        messageBox.appendChild(msg);
+
+        var closeBtn = document.createElement('button');
+        closeBtn.textContent = 'x';
+        messageBox.appendChild(closeBtn);
+
+        closeBtn.onclick = function() {
+        messageBox.parentNode.removeChild(messageBox);
+        }
+    }
+    body.onload = function (){
+        displayMessage();
+    }
+    
+</script>
+</html>

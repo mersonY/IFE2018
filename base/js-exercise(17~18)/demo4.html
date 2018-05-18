@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <table id="tab"></table>
+</body>
+</html>
+<script>
+    var table = document.getElementById("tab");
+    var code = "";
+    for(i=1;i<10;++i)
+    {   code =code + "<tr>";
+        for(j=1;j<=i;++j)
+        {
+            code += "<td>" + i*j + "</td>";
+        }
+        code =code + "</tr>";
+    }
+    table.innerHTML = code;
+</script>
