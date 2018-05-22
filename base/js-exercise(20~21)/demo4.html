@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+  <button id="fade-btn">淡出</button>
+</body>
+<script>
+  var obj = document.getElementById("fade-obj");
+  var btn = document.getElementById("fade-btn");
+  var opacity = 1; 
+  var flag1 = null;
+  var flag2 = null;
+
+  function fade(){
+    if(opacity <= 0){
+      clearInterval(flag1);
+      btn.disabled=false;
+      return;
+    }  
+    opacity -= 0.1;
+    obj.style.opacity = opacity;
+
+  }
+  function show(){
+    if(opacity >= 1){
+        clearInterval(flag2);
+        btn.disabled=false;
+        return;          
+    }
+    opacity +=0.1;
+    obj.style.opacity = opacity;
+  }
+
+  btn.onclick = function(){
+      if(this.textContent=="淡出"){
+        this.textContent = "淡入";
+        btn.disabled=true;
+        flag1 = setInterval(fade, 50);        
+      }else{
+        this.textContent = "淡出";
+        btn.disabled=true;
+        flag2 = setInterval(show, 50);
+      }
+
+
+      
+  }
+</script>
+</html>

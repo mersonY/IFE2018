@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <input id="name" type="text" >    
+  <button id="submit-btn">Submit</button> 
+</body>
+<script>
+  var input = document.getElementById("name");
+  var btn = document.getElementById("submit-btn");
+
+  function confirm(){
+    console.log(input.value);
+  }
+  btn.addEventListener("click", confirm);
+
+  function keydow(event){ //当给事件添加函数，触发函数的同时也给函数传入了一个event参数，代表该事件（写不写该参数都会传入该参数）
+    if(event.keyCode==13){
+        confirm();
+    }
+    if(event.keyCode==27){
+        input.value = "";
+    }   
+  }
+  input.addEventListener("keydown", keydow);
+</script>
+</html>
